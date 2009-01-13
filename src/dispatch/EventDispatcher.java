@@ -1,7 +1,6 @@
 package dispatch;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class EventDispatcher implements Dispatcher {
     private class Entry

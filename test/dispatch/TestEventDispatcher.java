@@ -10,17 +10,15 @@ public class TestEventDispatcher {
 	private class CountListener implements Listener {
 		public int count = 0;
 		
-        @Override
-		public void consumeEvent(Event event) {
+        public void consumeEvent(Event event) {
 			count++;
 		}
 	}
 
-	EventDispatcher dispatcher;
+	EventDispatcher dispatcher;	
 	
     private class AllEventFilter implements EventFilter
     {
-        @Override
         public boolean accept(Event e) {
             return true;
         } 
@@ -33,7 +31,6 @@ public class TestEventDispatcher {
         {
             this.m = m;
         }
-        @Override
         public boolean accept(Event e) {
             return (e instanceof MessageEvent) && ((MessageEvent)e).m.equals(this.m);
         }

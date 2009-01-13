@@ -1,6 +1,5 @@
 package bursa;
 
-import bursa.*;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -18,8 +17,7 @@ public class TestBursa {
 	private class Cumparator implements Listener {
 		public OfertaVanzare oferta;
 		
-        @Override
-		public void consumeEvent(Event event) {
+        public void consumeEvent(Event event) {
             if(event instanceof OfertaVanzareEvent)
             {
                 OfertaVanzareEvent bevent = (OfertaVanzareEvent)event;
@@ -36,8 +34,7 @@ public class TestBursa {
     private class Vanzator implements Listener {
 	public OfertaCumparare oferta;
 
-        @Override
-		public void consumeEvent(Event event) {
+        public void consumeEvent(Event event) {
             if(event instanceof OfertaCumparareEvent)
             {
                 OfertaCumparareEvent bevent = (OfertaCumparareEvent)event;
@@ -52,14 +49,12 @@ public class TestBursa {
 	}
 
     private class VanzariFilter implements EventFilter {
-        @Override
         public boolean accept(Event e) {
             return (e instanceof OfertaVanzareEvent) || (e instanceof TranzactieFinalizataEvent);
         }
     }
 
     private class CumparariFilter implements EventFilter {
-        @Override
         public boolean accept(Event e) {
             return (e instanceof OfertaCumparareEvent) || (e instanceof TranzactieFinalizataEvent);
         }
